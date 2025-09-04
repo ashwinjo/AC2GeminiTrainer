@@ -1,0 +1,28 @@
+{
+  "user_profile": {
+    "name": "",
+    "experience_level": "beginner",
+    "preferred_learning_style": "hands-on",
+    "goals": []
+  },
+  "progress": {
+    "completed_labs": [],
+    "current_lab": null,
+    "skill_assessments": {},
+    "challenges_attempted": [],
+    "troubleshooting_history": []
+  },
+  "session_data": {
+    "created_date": "",
+    "last_accessed": "",
+    "total_session_time": 0,
+    "lab_completion_times": {},
+    "notes": []
+  },
+  "preferences": {
+    "difficulty_level": "beginner",
+    "show_hints": true,
+    "auto_advance": false,
+    "preferred_language": "python"
+  }
+}
