@@ -1,3 +1,12 @@
+---
+title: "Python Module Not Found"
+troubleshooting_id: "T01"
+category: "troubleshooting"
+objective: "Resolve Python module import errors and missing package issues in OTG development environment."
+tags: ["python", "modules", "import-errors", "packages", "environment"]
+difficulty: "beginner"
+---
+
 # T01: Python Module Not Found
 
 ## 🐍 Problem Description

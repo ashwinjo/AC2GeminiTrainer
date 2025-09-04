@@ -1,3 +1,12 @@
+---
+title: "Lab 1 Troubleshooting Guide"
+lab_id: "lab-01-docker-b2b"
+category: "lab"
+objective: "Diagnose and resolve common issues encountered during Lab 1 Docker back-to-back testing setup and execution."
+tags: ["troubleshooting", "debugging", "docker", "networking", "solutions"]
+difficulty: "intermediate"
+---
+
 # Lab 01: Troubleshooting Guide
 
 ## Common Issues and Solutions

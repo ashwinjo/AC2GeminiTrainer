@@ -1,3 +1,12 @@
+---
+title: "What is OTG (Open Traffic Generator)?"
+concept_id: "C01"
+category: "concepts"
+objective: "Understand the fundamentals of Open Traffic Generator (OTG) - its architecture, benefits, and how it differs from traditional traffic generators."
+tags: ["otg", "fundamentals", "architecture", "open-source"]
+difficulty: "beginner"
+---
+
 # C01: What is OTG (Open Traffic Generator)?
 
 ## 🌐 Introduction

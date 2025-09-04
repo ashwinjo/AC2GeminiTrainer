@@ -1,3 +1,12 @@
+---
+title: "Environment Prerequisites"
+setup_id: "S01"
+category: "setup"
+objective: "Set up all required software, tools, and system configurations needed for OTG development and testing."
+tags: ["prerequisites", "docker", "python", "setup", "environment"]
+difficulty: "beginner"
+---
+
 # S01: Environment Prerequisites
 
 ## 🎯 Overview

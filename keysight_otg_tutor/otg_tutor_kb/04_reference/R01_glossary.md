@@ -1,3 +1,12 @@
+---
+title: "OTG Glossary"
+reference_id: "R01"
+category: "reference"
+objective: "Comprehensive glossary of OTG terms, concepts, and acronyms used throughout the tutorial and documentation."
+tags: ["glossary", "terms", "definitions", "reference", "vocabulary"]
+difficulty: "beginner"
+---
+
 # R01: OTG Glossary
 
 ## 📚 Overview

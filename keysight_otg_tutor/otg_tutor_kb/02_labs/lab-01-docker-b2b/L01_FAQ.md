@@ -1,3 +1,12 @@
+---
+title: "Lab 1 Frequently Asked Questions (FAQ)"
+lab_id: "lab-01-docker-b2b"
+category: "lab"
+objective: "Find answers to common questions about back-to-back testing, Docker setup, traffic parameters, and troubleshooting."
+tags: ["faq", "troubleshooting", "docker", "b2b-testing", "help"]
+difficulty: "beginner"
+---
+
 # Lab 01: Frequently Asked Questions (FAQ)
 
 ## General Questions

@@ -1,3 +1,12 @@
+---
+title: "Lab 1 Environment Cleanup"
+lab_id: "lab-01-docker-b2b"
+category: "lab"
+objective: "Safely stop and remove all Docker containers and virtual network interfaces created during Lab 1."
+tags: ["cleanup", "docker", "containers", "network-interfaces"]
+difficulty: "beginner"
+---
+
 # L01: Lab Cleanup Guide
 
 ## 🎯 Overview

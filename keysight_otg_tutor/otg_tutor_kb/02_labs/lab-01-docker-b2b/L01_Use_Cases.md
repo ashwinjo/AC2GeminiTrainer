@@ -1,3 +1,12 @@
+---
+title: "Lab 1 Real-World Use Cases"
+lab_id: "lab-01-docker-b2b"
+category: "lab"
+objective: "Explore real-world applications and industry use cases for back-to-back testing methodology learned in Lab 1."
+tags: ["use-cases", "real-world", "industry", "applications", "scenarios"]
+difficulty: "intermediate"
+---
+
 # Lab 01: Real-World Use Cases
 
 ## 🌍 Introduction

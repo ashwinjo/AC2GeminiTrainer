@@ -1,3 +1,12 @@
+---
+title: "Lab 1 Python Code Implementation"
+lab_id: "lab-01-docker-b2b"
+category: "lab"
+objective: "Complete Python code implementation for Lab 1 Docker back-to-back testing using OTG API and snappi."
+tags: ["code", "python", "implementation", "snappi", "otg-api"]
+difficulty: "intermediate"
+---
+
 # Lab 01: Python Code Implementation - lab-01_test.py
 
 ## Code Overview

@@ -1,3 +1,12 @@
+---
+title: "Port Is Already Allocated"
+troubleshooting_id: "T04"
+category: "troubleshooting"
+objective: "Resolve port allocation conflicts when starting Docker containers or network services."
+tags: ["port", "allocation", "docker", "networking", "conflicts"]
+difficulty: "beginner"
+---
+
 # T04: Port Is Already Allocated
 
 ## 🔌 Problem Description

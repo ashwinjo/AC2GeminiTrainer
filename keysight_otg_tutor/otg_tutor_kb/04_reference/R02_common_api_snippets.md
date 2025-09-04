@@ -1,3 +1,12 @@
+---
+title: "Common API Snippets"
+reference_id: "R02"
+category: "reference"
+objective: "Collection of frequently used OTG API code snippets, patterns, and examples for building tests and automation scripts."
+tags: ["api", "snippets", "code", "examples", "patterns", "reference"]
+difficulty: "intermediate"
+---
+
 # R02: Common API Snippets
 
 ## 🎯 Overview

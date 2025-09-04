@@ -1,3 +1,12 @@
+---
+title: "Docker Daemon Not Running"
+troubleshooting_id: "T02"
+category: "troubleshooting"
+objective: "Diagnose and fix Docker daemon startup issues across different operating systems."
+tags: ["docker", "daemon", "startup", "permissions", "installation"]
+difficulty: "beginner"
+---
+
 # T02: Docker Daemon Not Running
 
 ## 🐳 Problem Description

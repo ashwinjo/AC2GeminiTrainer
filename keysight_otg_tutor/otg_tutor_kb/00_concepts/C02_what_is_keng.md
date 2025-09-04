@@ -1,3 +1,12 @@
+---
+title: "What is KENG (Keysight Elastic Network Generator)?"
+concept_id: "C02"
+category: "concepts"
+objective: "Learn about KENG - Keysight's cloud-native implementation of OTG, its architecture, deployment models, and enterprise features."
+tags: ["keng", "keysight", "cloud-native", "containers", "enterprise"]
+difficulty: "intermediate"
+---
+
 # C02: What is KENG (Keysight Elastic Network Generator)?
 
 ## 🚀 Introduction

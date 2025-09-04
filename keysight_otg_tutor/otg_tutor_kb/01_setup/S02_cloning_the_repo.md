@@ -1,3 +1,12 @@
+---
+title: "Cloning the Repository"
+setup_id: "S02"
+category: "setup"
+objective: "Clone the OTG tutorial repository and set up your local development environment for hands-on learning."
+tags: ["git", "repository", "clone", "setup", "development"]
+difficulty: "beginner"
+---
+
 # S02: Cloning the Repository
 
 ## 🎯 Overview
