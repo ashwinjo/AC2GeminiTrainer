@@ -21,6 +21,7 @@ docker pull ghcr.io/open-traffic-generator/keng-controller:1.14.0-1
 docker pull ghcr.io/open-traffic-generator/ixia-c-traffic-engine:1.8.0.99
 ```
 
+
 **Verify images and containers:**
 ```bash
 # Check downloaded images
@@ -52,10 +53,7 @@ Deploy the KENG Controller container:
 
 ```bash
 # Start KENG Controller
-docker run -d --name controller \
-  --network=host \
-  ghcr.io/open-traffic-generator/keng-controller:1.14.0-1 \
-  --http-port 8443 --accept-eula
+docker run -d --name controller --network=host ghcr.io/open-traffic-generator/keng-controller:1.14.0-1 --http-port 8443 --accept-eula
 ```
 
 **Parameters explained:**
@@ -69,18 +67,10 @@ Deploy two Ixia-c Traffic Engine containers:
 
 ```bash
 # Start Traffic Engine 1 (connected to veth0)
-docker run -d --name traffic-engine-1 \
-  --network=host \
-  -e ARG_IFACE_LIST=virtual@af_packet,veth0 \
-  -e OPT_NO_HUGEPAGES=Yes \
-  --privileged \
-  -e OPT_LISTEN_PORT=5551 \
-  ghcr.io/open-traffic-generator/ixia-c-traffic-engine:1.8.0.99
+docker run -d --name traffic-engine-1 --network=host -e ARG_IFACE_LIST=virtual@af_packet,veth0 -e OPT_NO_HUGEPAGES=Yes --privileged -e OPT_LISTEN_PORT=5551 ghcr.io/open-traffic-generator/ixia-c-traffic-engine:1.8.0.99
 
 # Start Traffic Engine 2 (connected to veth1)
-docker run -d --name traffic-engine-2 \
-  --network=host \
-  -e ARG_IFACE_LIST=virtual@af_packet,veth1 \
+docker run -d --name traffic-engine-2 --network=host -e ARG_IFACE_LIST=virtual@af_packet,veth1 \
   -e OPT_NO_HUGEPAGES=Yes \
   --privileged \
   -e OPT_LISTEN_PORT=5552 \

@@ -83,6 +83,7 @@ This document provides the complete interactive flow for guiding users through L
 
 **Learning Checkpoint 2.1: Virtual Interfaces**
 - Explain veth pairs concept
+- Guide user through **L01_Lab_Configuration.md** Step 2
 - Guide through: `sudo ip link add name veth0 type veth peer name veth1`
 - Validate: `ip link show | grep veth`
 
@@ -101,11 +102,12 @@ This document provides the complete interactive flow for guiding users through L
 **Learning Checkpoint 3.1: Controller Container**
 - Explain controller role in OTG architecture
 - Guide through controller startup
-- Validate: `docker ps | grep keng-controller`
+- Guide user through **L01_Lab_Configuration.md** Step 3
 - Test connectivity: `curl -k https://localhost:8443/api/v1/config`
 
 **Learning Checkpoint 3.2: Traffic Engine Containers**
 - Explain traffic engine purpose
+- Guide user through **L01_Lab_Configuration.md** Step 4
 - Guide through both traffic engine deployments
 - Validate: `docker ps | grep ixia-c-traffic-engine`
 

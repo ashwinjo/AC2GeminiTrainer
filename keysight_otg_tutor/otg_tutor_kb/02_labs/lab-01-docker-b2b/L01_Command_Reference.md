@@ -1,3 +1,12 @@
+---
+title: "Lab 1 Command Reference Card"
+lab_id: "lab-01-docker-b2b"
+category: "lab"
+objective: "Quick reference for all Docker, networking, and OTG commands used in Lab 1 back-to-back testing."
+tags: ["reference", "commands", "docker", "networking", "cheat-sheet"]
+difficulty: "beginner"
+---
+
 # L01: Command Reference Card
 
 ## 🎯 Quick Command Reference
