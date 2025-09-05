@@ -39,9 +39,9 @@ This document provides the complete interactive flow for guiding users through L
 **Tutor Action: Assess user readiness**
 
 **Check Prerequisites:**
-1. Ask user to confirm Docker installation: `docker --version`
-2. Verify Python 3.8+: `python3 --version`
-3. Check sudo access: `sudo echo "test"`
+1. Use commands from **S01_environment_prerequisites.md** to verify Docker installation
+2. Use commands from **S01_environment_prerequisites.md** to verify Python version
+3. Check sudo access using appropriate verification methods
 4. Confirm basic networking knowledge
 
 **Adaptive Response:**
@@ -66,8 +66,8 @@ This document provides the complete interactive flow for guiding users through L
 
 **Learning Checkpoint 1.2: Docker Image Setup**
 - Guide user through **L01_Lab_Configuration.md** Step 1
-- Ask user to execute: `docker pull` commands
-- Validate: `docker images | grep -E "(keng-controller|ixia-c-traffic-engine)"`
+- Reference the exact `docker pull` commands from **L01_Lab_Configuration.md** Step 1
+- Use the verification commands from **L01_Lab_Configuration.md** Step 1
 
 **Validation Questions:**
 - "Why do we use specific image versions rather than 'latest'?"
@@ -84,8 +84,8 @@ This document provides the complete interactive flow for guiding users through L
 **Learning Checkpoint 2.1: Virtual Interfaces**
 - Explain veth pairs concept
 - Guide user through **L01_Lab_Configuration.md** Step 2
-- Guide through: `sudo ip link add name veth0 type veth peer name veth1`
-- Validate: `ip link show | grep veth`
+- Use the exact commands from **L01_Lab_Configuration.md** Step 2 for creating virtual interfaces
+- Use the verification commands from **L01_Lab_Configuration.md** Step 2
 
 **Interactive Questions:**
 - "What happens when we create a veth pair?"
@@ -101,15 +101,15 @@ This document provides the complete interactive flow for guiding users through L
 
 **Learning Checkpoint 3.1: Controller Container**
 - Explain controller role in OTG architecture
-- Guide through controller startup
 - Guide user through **L01_Lab_Configuration.md** Step 3
-- Test connectivity: `curl -k https://localhost:8443/api/v1/config`
+- Use the exact `docker run` command from **L01_Lab_Configuration.md** Step 3
+- Test connectivity using appropriate verification methods
 
 **Learning Checkpoint 3.2: Traffic Engine Containers**
 - Explain traffic engine purpose
 - Guide user through **L01_Lab_Configuration.md** Step 4
-- Guide through both traffic engine deployments
-- Validate: `docker ps | grep ixia-c-traffic-engine`
+- Use the exact `docker run` commands from **L01_Lab_Configuration.md** Step 4 for both traffic engines
+- Use the verification commands from **L01_Lab_Configuration.md** Step 4
 
 **Interactive Validation:**
 - "How many containers should be running now?" (Expected: 3)
@@ -130,7 +130,7 @@ This document provides the complete interactive flow for guiding users through L
 - Expected: 2000 packets, 100 pps, bidirectional
 
 **Learning Checkpoint 4.2: Test Execution**
-- Guide user to run: `python3 L01_lab_01_test.py`
+- Guide user through **L01_Lab_Test_Execution.md** for the exact test execution command
 - Monitor execution in real-time
 - Ask user to observe the output
 
@@ -149,11 +149,11 @@ This document provides the complete interactive flow for guiding users through L
 
 **Learning Checkpoint 5.1: Understanding Metrics**
 - Guide through **L01_Lab_Metrics.md**
-- Ask user to check interface counters: `cat /proc/net/dev`
+- Use the exact commands from **L01_Lab_Metrics.md** for checking interface counters
 - Compare before/after test execution
 
 **Learning Checkpoint 5.2: OTG API Metrics**
-- Show how to query API directly: `curl -k https://localhost:8443/api/v1/results/metrics`
+- Use commands from **L01_Lab_Metrics.md** to query API metrics
 - Explain different metric types
 
 **Critical Thinking Questions:**
@@ -172,9 +172,8 @@ This document provides the complete interactive flow for guiding users through L
   - Change frame size from 128 to 512 bytes
 
 **Learning Checkpoint 6.2: Advanced Modifications**
-- Remove UDP header from one flow
-- Change to unidirectional traffic
-- Validate changes with `git diff`
+- Follow the specific modifications outlined in **L01_Challenge.md**
+- Use the validation methods specified in **L01_Challenge.md**
 
 **Assessment Questions:**
 - "What impact did changing the rate have on test duration?"
