@@ -52,7 +52,6 @@ def Test_ebgp_route_prefix():
     wait_for(lambda: flow_metrics_ok(api, test_const), "flow metrics",2,90)
 
     # stop_capture(api)
-
     # get_capture(api, "prx", "prx.pcap")
     # get_capture(api, "ptx", "ptx.pcap")
 

@@ -41,15 +41,18 @@ flowchart TD
     K --> L
     
     L --> M[Phase 6: Metrics Analysis]
-    M --> N[Phase 7: Challenge (Optional)]
-    N --> O[Phase 8: Cleanup & Reflection]
-    O --> P[Lab Complete]
+    M --> N[Phase 6.5: Packet Capture Analysis]
+    N --> O[Phase 7: Challenge (Optional)]
+    O --> P[Phase 8: CLI Tool Exploration (Optional)]
+    P --> Q[Phase 9: Cleanup & Reflection]
+    Q --> R[Lab Complete]
     
     style A fill:#e1f5fe
     style H fill:#fff3e0
     style I fill:#f3e5f5
     style L fill:#e8f5e8
-    style P fill:#e8f5e8
+    style N fill:#fff9c4
+    style R fill:#e8f5e8
 ```
 
 ## 📚 Reference Files Available
@@ -57,6 +60,7 @@ flowchart TD
 - **L02_Lab_Configuration.md** - Docker Compose setup instructions
 - **L02_Lab_Test_Execution.md** - Protocol test execution steps
 - **L02_Lab_Metrics.md** - Protocol and traffic metrics collection
+- **L02_Lab_Packet_Capture.md** - Packet capture and analysis techniques
 - **L02_Challenge.md** - Advanced protocol exercises
 - **L02_Cleanup.md** - Environment cleanup
 - **L02_FAQ.md** - Common questions and answers
@@ -76,14 +80,14 @@ flowchart TD
 2. Use commands from **S01_environment_prerequisites.md** to verify Python version and snappi package
 3. Verify Lab 01 completion and cleanup
 4. Confirm basic BGP protocol knowledge
-5. Verify tshark installation for packet capture analysis (see **L03_Lab_Packet_Capture.md**)
+5. Verify tshark installation for packet capture analysis (see **L02_Lab_Packet_Capture.md**)
 
 **Adaptive Response:**
 - If prerequisites missing → Guide to **S01_environment_prerequisites.md**
 - If Docker issues → Reference **T02_docker_daemon_not_running.md**
 - If Python issues → Reference **T01_python_module_not_found.md**
 - If Lab 01 not completed → Recommend completing Lab 01 first
-- If tshark not installed → Guide to packet capture setup in **L03_Lab_Packet_Capture.md**
+- If tshark not installed → Guide to packet capture setup in **L02_Lab_Packet_Capture.md**
 - If all good → Proceed to Phase 1
 
 **Questions to Ask:**
@@ -94,7 +98,7 @@ flowchart TD
 - "Have you used packet capture tools like Wireshark/tshark before?"
 
 **Packet Capture Preparation:**
-- Review packet capture configuration in **L03_Lab_Packet_Capture.md**
+- Review packet capture configuration in **L02_Lab_Packet_Capture.md**
 - Understand BGP protocol message types for analysis
 - Familiarize with tshark commands for traffic inspection
 - Check storage space for PCAP files
@@ -228,6 +232,116 @@ flowchart TD
 - "What's the correlation between BGP session state and traffic success?"
 - "How would you troubleshoot traffic loss in a protocol-aware setup?"
 - "What metrics indicate successful protocol-traffic integration?"
+
+### Phase 6.5: Packet Capture Analysis
+**Tutor Action: Deep dive into protocol packet analysis**
+
+**Learning Checkpoint 6.5.1: Enable Packet Capture in Test Script**
+- Explain the importance of packet-level analysis for protocol troubleshooting
+- Show how to modify the test script to enable packet capture functionality
+- Guide user through uncommenting capture-related lines in the Python script
+
+**Script Modification Process:**
+```python
+# In lab-02_test.py, show user these lines need to be uncommented:
+# Line ~48: start_capture(api)
+# Line ~54: stop_capture(api) 
+# Line ~55: get_capture(api, "prx", "prx.pcap")
+# Line ~56: get_capture(api, "ptx", "ptx.pcap")
+```
+
+**Learning Checkpoint 6.5.2: Install Packet Analysis Tools**
+- Guide user through tshark installation for command-line packet analysis
+- Explain the relationship between Wireshark (GUI) and tshark (CLI)
+- Prepare user for PCAP file analysis
+
+**Installation Command:**
+```bash
+sudo apt install tshark -y
+```
+
+**Learning Checkpoint 6.5.3: Execute Test with Packet Capture**
+- Run the modified test script with packet capture enabled
+- Explain capture process and file generation
+- Monitor capture file creation: `prx.pcap` and `ptx.pcap`
+
+**Learning Checkpoint 6.5.4: Basic Packet Analysis**
+- Analyze captured packets using tshark
+- Focus on BGP protocol messages and traffic flows
+- Understand packet timing and protocol state changes
+
+**Basic Analysis Commands:**
+```bash
+# Analyze received packets (prx.pcap)
+tshark -r prx.pcap
+
+# Filter for BGP packets only
+tshark -r prx.pcap -Y bgp
+
+# Count packet types
+tshark -r prx.pcap -q -z conv,ip
+```
+
+**Interactive Analysis:**
+- "What types of packets do you see in the capture?"
+- "Can you identify BGP OPEN, UPDATE, and KEEPALIVE messages?"
+- "How does the packet timing correlate with the protocol establishment?"
+
+**Learning Checkpoint 6.5.5: Advanced Packet Capture - BGP Session Analysis**
+- Modify script to capture BGP session establishment
+- Move `start_capture(api)` before `start_protocols(api)` to capture TCP handshake
+- Analyze complete BGP session establishment process
+
+**Script Modification for BGP Session Capture:**
+```python
+# Show user how to edit lab-02_test.py using nano:
+# Move start_capture(api) line to occur before start_protocols(api)
+# This captures the complete BGP session establishment including TCP
+```
+
+**Nano Editor Instructions:**
+```bash
+nano lab-02_test.py
+# Guide user to:
+# 1. Find start_capture(api) line (around line 48)
+# 2. Cut it (Ctrl+K)
+# 3. Find start_protocols(api) line (around line 42) 
+# 4. Paste above it (Ctrl+U)
+# 5. Save and exit (Ctrl+X, Y, Enter)
+```
+
+**Learning Checkpoint 6.5.6: TCP and BGP Session Analysis**
+- Re-run test with modified capture timing
+- Analyze TCP three-way handshake for BGP sessions
+- Examine BGP OPEN message exchange
+- Understand BGP session establishment timing
+
+**Advanced Analysis Commands:**
+```bash
+# Analyze TCP connections
+tshark -r prx.pcap -Y tcp
+
+# Focus on BGP session establishment
+tshark -r prx.pcap -Y "tcp.port == 179 or bgp"
+
+# Detailed BGP message analysis
+tshark -r prx.pcap -Y bgp -V
+
+# Timeline analysis
+tshark -r prx.pcap -Y bgp -t ad
+```
+
+**Critical Thinking Questions:**
+- "What's the difference between the two capture approaches?"
+- "How long does BGP session establishment take at the packet level?"
+- "What can packet analysis tell us that metrics cannot?"
+- "How would you use packet capture for troubleshooting BGP issues?"
+
+**Troubleshooting with Packet Capture:**
+- Identify common BGP session failures through packet analysis
+- Analyze timing issues and keepalive intervals
+- Understand the relationship between TCP and BGP layers
+- Use packet capture for root cause analysis
 
 ### Phase 7: Hands-on Challenge (Optional)
 **Tutor Action: Assess practical understanding**
