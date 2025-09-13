@@ -76,12 +76,14 @@ flowchart TD
 2. Use commands from **S01_environment_prerequisites.md** to verify Python version and snappi package
 3. Verify Lab 01 completion and cleanup
 4. Confirm basic BGP protocol knowledge
+5. Verify tshark installation for packet capture analysis (see **L03_Lab_Packet_Capture.md**)
 
 **Adaptive Response:**
 - If prerequisites missing → Guide to **S01_environment_prerequisites.md**
 - If Docker issues → Reference **T02_docker_daemon_not_running.md**
 - If Python issues → Reference **T01_python_module_not_found.md**
 - If Lab 01 not completed → Recommend completing Lab 01 first
+- If tshark not installed → Guide to packet capture setup in **L03_Lab_Packet_Capture.md**
 - If all good → Proceed to Phase 1
 
 **Questions to Ask:**
@@ -89,6 +91,13 @@ flowchart TD
 - "What's your experience level with BGP protocol? (beginner/intermediate/advanced)"
 - "Are you familiar with Docker Compose orchestration?"
 - "Would you prefer step-by-step guidance or more independent exploration?"
+- "Have you used packet capture tools like Wireshark/tshark before?"
+
+**Packet Capture Preparation:**
+- Review packet capture configuration in **L03_Lab_Packet_Capture.md**
+- Understand BGP protocol message types for analysis
+- Familiarize with tshark commands for traffic inspection
+- Check storage space for PCAP files
 
 ### Phase 1: Environment Setup
 **Tutor Action: Guide through initial setup**

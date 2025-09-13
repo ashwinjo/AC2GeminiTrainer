@@ -46,7 +46,8 @@ Connect the traffic engine containers using virtual ethernet pairs:
 
 ```bash
 # Connect TE containers with veth pairs using IP namespaces
-sudo bash connect_containers_veth.sh lab-02_traffic_engine_1_1 lab-02_traffic_engine_2_1 veth0 veth1
+sudo bash /home/ubuntu/AC2GeminiTrainer/keysight_otg_tutor/otg_tutor_kb/02_labs/lab-02-docker-b2b-protocol/L02_connect_containers_veth.sh lab-02-docker-b2b-protocol_traffic_engine_1_1 
+  lab-02-docker-b2b-protocol_traffic_engine_2_1 veth0 veth1
 ```
 
 **🧠 What's happening behind the scenes:**
