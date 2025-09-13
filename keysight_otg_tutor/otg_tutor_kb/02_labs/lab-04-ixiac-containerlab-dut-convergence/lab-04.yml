@@ -1,0 +1,14 @@
+name: lab-04
+topology:
+  nodes:
+    ixia-c:
+      kind: keysight_ixia-c-one
+      image: ghcr.io/open-traffic-generator/ixia-c-one:1.14.0-1
+    srl:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
+      startup-config: lab-04-srl.cfg
+  links:
+    - endpoints: ["ixia-c:eth1","srl:e1-1"]
+    - endpoints: ["ixia-c:eth2","srl:e1-2"]
+    - endpoints: ["ixia-c:eth3","srl:e1-3"]
